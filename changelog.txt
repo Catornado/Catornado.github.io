@@ -1,0 +1,1 @@
+Feb 6 2023: VBE (Very Bad Emulator) created. Inspied by VBA and Googulator.
