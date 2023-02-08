@@ -33,7 +33,27 @@ class Renderer {
         this.display = new Array(this.columns * this.rows);
     }
     render() {// 60 FPS
-        
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height); //clear every frame
+        for (let i = 0; i < this.columns * this.rows; i++)
+        {
+            let x = (i % this.columns) * this.scale; //x position of i in canvas
+            let y = math.floor(i / this.columns) * this.scale;
+            if (this.display[i] == 1) {//if pixel is on, fill pixel
+                this.context.fillStyle = '#000000';
+                this.context.fillRect(x, y, this.scale, this.scale)//place scaled pixel
+            }
+            
+        }
+    }
+    testRender() {
+        this.setPixel(0, 0);
+        this.setPixel(1, 1);
+        this.setPixel(0, 2);
+        this.setPixel(2, 2);
+        this.setPixel(1, 2);
+        this.setPixel(0, 3);
+        this.setPixel(2, 3);
+        this.setPixel(2, 0);
     }
 }
 
